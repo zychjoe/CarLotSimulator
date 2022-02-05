@@ -6,28 +6,65 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+            //Today I'm parking Uptown. I found a CarLot at 89th and 10th.
+            CarLot EightyNinthAndTenth = new CarLot();
 
+            //We're going to park three cars.
+            //(Named and modeled after three real world cars I once owned.)
+            Car TheExecutive = new Car();
+            TheExecutive.Year = 1998;
+            TheExecutive.Make = "Lincoln";
+            TheExecutive.Model = "Towncar";
+            TheExecutive.EngineNoise = "Ruggaruggarugga";
+            TheExecutive.HonkNoise = "MIIuuuuuuh";
+            TheExecutive.IsDriveable = false; //That tree popped outta nowhere!
 
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
+            //Now to park the Executive.
+            EightyNinthAndTenth.ParkCar(TheExecutive);
 
-            //*************BONUS*************//
+            Car SilverSnake = new Car(2010, "Saturn", "S4", "zzzzzzz", "HEEH", true);
 
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
+            //And we'll park the Silver Snake.
+            EightyNinthAndTenth.ParkCar(SilverSnake);
 
-            //*************BONUS X 2*************//
+            //Now the CarLot is full!
+            EightyNinthAndTenth.ReadInventory();
 
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            Car Cherry = new Car()
+            {
+                Year = 2013,
+                Make = "Ford",
+                Model = "Fiesta",
+                EngineNoise = "chigchigchig",
+                HonkNoise = "BIP",
+                IsDriveable = true
+            };
+
+            //If I try to park Cherry, the attendant will tell me the lot is full.
+            EightyNinthAndTenth.ParkCar(Cherry);
+
+            //So I get mad...
+            Console.WriteLine("ME: What?! You've got room for atleast 3 more cars in there!");
+
+            //And convince him to change his mind.
+            Console.WriteLine("PARKING ATTENDANT: Yeah, I guess...");
+            EightyNinthAndTenth.Capacity = 5;
+            EightyNinthAndTenth.ParkCar(Cherry);
+
+            //So I Drive Cherry in - 
+            Console.WriteLine($"CHERRY (THE CAR): ");
+            Cherry.MakeEngineNoise("Putter");
+
+            //And give a friendly honk - 
+            Cherry.MakeHonkNoise("TOOT TOOT");
+
+            //And ask for some more information -
+            Console.WriteLine("ME: What cars do you have in here now?");
+
+            //Which I am kindly given.
+            EightyNinthAndTenth.ReadInventory();
+
         }
     }
 }
