@@ -14,6 +14,7 @@ namespace CarLotSimulator
         //Default Constructor
         public Car()
         {
+            CarLotModuleEight.NumberOfCars++; //For Module 8 exercise
         }
 
         //Costructor w/ props
@@ -25,6 +26,7 @@ namespace CarLotSimulator
             EngineNoise = engine;
             HonkNoise = honk;
             IsDriveable = isDriveable;
+            CarLotModuleEight.NumberOfCars++; //For Module 8 exercise
 
         }
 

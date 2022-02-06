@@ -65,6 +65,15 @@ namespace CarLotSimulator
             //Which I am kindly given.
             EightyNinthAndTenth.ReadInventory();
 
+
+            //UPDATE FOR MODULE EIGHT
+
+            Console.WriteLine("********************************");
+            Console.WriteLine("*****Module Eight Exercise******");
+            Console.WriteLine("********************************");
+
+
+            Console.WriteLine($"Number of cars: {CarLotModuleEight.NumberOfCars}");
         }
     }
 }
